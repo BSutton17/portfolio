@@ -43,7 +43,7 @@ function App() {
               <a href="#projects">Projects</a>
             </li>
             <li>
-              <a href="#Contact">Contact Me</a>
+              <a href="#spacing">Contact Me</a>
             </li>
           </ul>
         </nav>
