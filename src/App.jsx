@@ -129,7 +129,7 @@ function App() {
               imageSrc="https://d33wubrfki0l68.cloudfront.net/64d464db0ca29b000892c827/screenshot_2023-08-10-04-18-53-0000.png"
               imageAlt="Calculator"
               onClick={() => viewModal(
-                "A project every good programmer should have under their belt. This is one of the most time consuming and difficult projects I ever coded in React. After this project, I really began to feel like a software engineer.",
+                "A project every good programmer should have under their belt. This is one of the more time consuming and difficult personal projects I ever coded in React. After this project, I really began to feel like a software engineer.",
                 "https://brysons-calculator.netlify.app/",
                 "https://d33wubrfki0l68.cloudfront.net/64d464db0ca29b000892c827/screenshot_2023-08-10-04-18-53-0000.png"
               )}
