@@ -43,7 +43,7 @@ function App() {
               <a href="#projects">Projects</a>
             </li>
             <li>
-              <a href="#profile-link">Contact Me</a>
+              <a href="#Contact">Contact Me</a>
             </li>
           </ul>
         </nav>
