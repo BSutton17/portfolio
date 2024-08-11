@@ -95,7 +95,9 @@ a:link {
   align-items: center;
 }
 
-
+.active-modal{
+  overflow-y: hidden;
+}
 
 .modal-content a {
   text-decoration: none;

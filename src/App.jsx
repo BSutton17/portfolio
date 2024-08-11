@@ -11,7 +11,18 @@ function App() {
     img: '',
   });
 
+  const toggleModal = () => {
+    setModal(!modal);
+  };
+
+  if(modal) {
+    document.body.classList.add('active-modal')
+  } else {
+    document.body.classList.remove('active-modal')
+  }
+
   const viewModal = (message, link, img) => {
+    toggleModal()
     setModalContent({ message, link, img });
     setModal(true);
   };
