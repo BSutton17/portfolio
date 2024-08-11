@@ -232,9 +232,9 @@ img {
 /* Footer styles */
 footer {
   min-width: 100%;
-  min-height: 30%;
-  margin-top: 35px;
+  min-height: 50%;
   background-color: var(--Dark-Blue);
+  border: 1px solid var(--Dark-Blue);
 }
 
 .footer:hover {
