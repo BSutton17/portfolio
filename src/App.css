@@ -1,0 +1,256 @@
+/* Variable definitions */
+:root {
+  --Dark-Blue: #130D33;
+  --Purple: #231955;
+  --Blue: #1F4590;
+  --Yellow: #E8AA42;
+  --Tan: #FFE5B4;
+}
+
+/* Global styles */
+body {
+  margin-top: 70px; /* Offset for fixed header */
+  font-family: sans-serif;
+  height: 100%;
+  background-color: var(--Blue);
+  color: var(--Yellow);
+  overflow-x: hidden;
+}
+
+/* Ensure box-sizing includes borders */
+* {
+  box-sizing: border-box;
+}
+
+/* Header styles */
+header {
+  width: 100%;
+  height: 70px;
+  min-width: 500px;
+  background-color: var(--Dark-Blue);
+  display: flex;
+  justify-content: flex-end; /* Adjusted from 'end' for better readability */
+  align-items: center;
+  position: fixed;
+  top: 0;
+  color: var(--Yellow);
+  font-weight: bold;
+  z-index: 1;
+}
+
+/* Navigation styles */
+ul {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-right: 20px;
+}
+
+li {
+  color: var(--Yellow);
+  margin: 0 0.3rem 0;
+  padding: 1.42rem;
+  display: block;
+}
+
+li:hover {
+  background-color: var(--Yellow);
+  color: var(--Dark-Blue);
+  cursor: pointer;
+}
+
+li > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Link styles */
+a:link {
+  color: var(--Yellow);
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.modal-content {
+  background: white;
+  color: var(--Dark-Blue);
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 50vw;
+  overflow: hidden; /* Added missing semi-colon */
+  display: flex;
+  align-items: center;
+}
+
+
+
+.modal-content a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.modal-content a:hover {
+  color: inherit;
+}
+
+/* Button styles */
+.modal-content button {
+  background-color: transparent;
+  border: 1px solid gray;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Welcome section styles */
+.welcome-section {
+  text-align: center;
+  width: 100vw;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Purple);
+  margin: 0;
+}
+
+.caption, h1 {
+  margin: 1px;
+}
+
+.caption {
+  font-size: 24px;
+  position: relative;
+}
+
+h1 {
+  position: relative;
+  font-size: 64%; 
+  color: var(--Tan);
+}
+
+h2 {
+  text-align: center;
+  font-size: 45px;
+}
+
+h3 {
+  position: relative;
+  bottom: 10px;
+}
+
+.text-wrapper{
+  text-align: center;
+  margin-left: 1%;
+}
+
+.language {
+  font-size: 25px;
+  text-align: center;
+  text-decoration: underline;
+  color: var(--Dark-Blue);
+}
+
+/* Hover block styles */
+.hover-text {
+  display: none;
+}
+
+.hover-block:hover .hover-text {
+  color: var(--Tan);
+  text-align: center;
+  display: block;
+}
+
+.hover-block a {
+  color: var(--Yellow);
+}
+
+.hover-text:hover {
+  color: var(--Tan);
+  text-align: center;
+  display: block;
+}
+
+/* Project tile styles */
+.project-tile,
+.title,
+img {
+  max-width: 350px;
+  min-width: 300px;
+  z-index: 0;
+}
+
+.project-tile img {
+  aspect-ratio: 3/2;
+  width: 100%;
+  height: calc(100% - 6.8rem);
+  position: relative;
+  object-fit: cover;
+}
+
+.project-tile {
+  border: 1px solid black;
+  width: 50%;
+  height: 50%;
+  background-color: var(--Dark-Blue);
+  text-align: center;
+  display: inline-block;
+  margin: 16px;
+  position: relative;
+  left: 9%;
+}
+
+.project-tile:hover {
+  background-color: var(--Purple);
+}
+
+.title {
+  padding-top: 20px;
+  color: var(--Yellow);
+}
+
+/* Footer styles */
+footer {
+  min-width: 100%;
+  min-height: 30%;
+  margin-top: 35px;
+  background-color: var(--Dark-Blue);
+}
+
+.footer:hover {
+  background-color: var(--Tan);
+  color: var(--Dark-Blue);
+  cursor: pointer;
+}
+
+/* Contact section styles */
+.contact {
+  margin: 0 auto;
+  color: var(--Tan);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
+#Contact {
+  padding-top: 10px;
+}
