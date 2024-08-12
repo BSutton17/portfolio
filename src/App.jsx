@@ -35,16 +35,22 @@ function App() {
     <div className="App">
       <header id="welcome-section">
         <nav id="navbar">
-          <ul>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#projects">Projects</a>
-            </li>
-            <li>
-              <a href="#spacing">Contact Me</a>
-            </li>
+          <ul> 
+            <a href="#about">
+              <li>
+              About
+              </li>
+            </a>
+            <a href="#projects">
+              <li>
+              Projects
+              </li>
+            </a>
+            <a href="#spacing">
+              <li>
+                Contact Me
+              </li>
+            </a>
           </ul>
         </nav>
       </header>
