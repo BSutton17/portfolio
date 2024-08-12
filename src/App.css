@@ -97,7 +97,7 @@ a:link {
 }
 
 @media (max-width: 450px){
-  img{
+  .modal-img > img{
     width: 1px !important;
     min-width: 100px !important;
   }
