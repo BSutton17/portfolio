@@ -66,6 +66,7 @@ function App() {
             </span>
           </div>
           <div className="project-container">
+            <div className='testing'>
             {modal && (
               <Modal
                 message={modalContent.message}
@@ -144,6 +145,7 @@ function App() {
                 "https://i.ibb.co/v4Bcdt5/tic-tac-toe.png"
               )}
             />
+          </div>
           </div>
           <div className="hover-block">
             <h3 className="language">Java Projects</h3>

@@ -9,12 +9,13 @@
 
 /* Global styles */
 body {
-  margin-top: 70px; /* Offset for fixed header */
+  margin-top: 70px; 
   font-family: sans-serif;
   height: 100%;
+  width: 100%;
   background-color: var(--Blue);
   color: var(--Yellow);
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 /* Ensure box-sizing includes borders */
@@ -25,8 +26,7 @@ body {
 /* Header styles */
 header {
   width: 100%;
-  height: 70px;
-  min-width: 500px;
+  height: 10vh;
   background-color: var(--Dark-Blue);
   display: flex;
   justify-content: flex-end; /* Adjusted from 'end' for better readability */
@@ -44,7 +44,7 @@ ul {
   justify-content: flex-start;
   flex-wrap: wrap;
   align-items: center;
-  margin-right: 20px;
+  margin-right: 2.2vw;
 }
 
 li {
@@ -89,8 +89,9 @@ a:link {
   color: var(--Dark-Blue);
   padding: 20px;
   border-radius: 5px;
-  max-width: 50vw;
-  overflow: hidden; /* Added missing semi-colon */
+  width: 750px;
+  max-height: 50vh;
+  overflow-y: hidden;
   display: flex;
   align-items: center;
 }
@@ -123,7 +124,7 @@ a:link {
 /* Welcome section styles */
 .welcome-section {
   text-align: center;
-  width: 100vw;
+  width: 100%;
   height: 75vh;
   display: flex;
   flex-direction: column;
@@ -133,12 +134,15 @@ a:link {
   margin: 0;
 }
 
+#projects{
+  margin: 0;
+}
 .caption, h1 {
   margin: 1px;
 }
 
 .caption {
-  font-size: 24px;
+  font-size: 150%;
   position: relative;
 }
 
@@ -150,7 +154,7 @@ h1 {
 
 h2 {
   text-align: center;
-  font-size: 45px;
+  font-size: 200%;
 }
 
 h3 {
@@ -158,6 +162,9 @@ h3 {
   bottom: 10px;
 }
 
+.project-container{
+  text-align: center;
+}
 .text-wrapper{
   text-align: center;
   margin-left: 1%;
@@ -197,7 +204,6 @@ h3 {
 img {
   max-width: 350px;
   min-width: 300px;
-  z-index: 0;
 }
 
 .project-tile img {
@@ -214,10 +220,10 @@ img {
   height: 50%;
   background-color: var(--Dark-Blue);
   text-align: center;
-  display: inline-block;
+  display: inline-block ;
   margin: 16px;
-  position: relative;
-  left: 9%;
+  
+ 
 }
 
 .project-tile:hover {
@@ -232,9 +238,9 @@ img {
 /* Footer styles */
 footer {
   min-width: 100%;
-  min-height: 30%;
-  margin-top: 35px;
+  min-height: 50%;
   background-color: var(--Dark-Blue);
+  border: 1px solid var(--Dark-Blue);
 }
 
 .footer:hover {
