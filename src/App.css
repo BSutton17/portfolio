@@ -96,6 +96,15 @@ a:link {
   align-items: center;
 }
 
+@media (max-width: 450px){
+  img{
+    width: 1px !important;
+    min-width: 100px !important;
+  }
+  h3{
+    font-size: 75%;
+  }
+}
 .active-modal{
   overflow-y: hidden;
 }
