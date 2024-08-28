@@ -151,6 +151,16 @@ function App() {
                 "https://i.ibb.co/v4Bcdt5/tic-tac-toe.png"
               )}
             />
+            <ProjectTile
+              title="Overloard"
+              imageSrc="https://ibb.co/9b68kF8"
+              imageAlt="Overloard"
+              onClick={() => viewModal(
+                "Why make another chess clone when you can do something even cooler: make your <i>own</i> game. That is exactly what I did. Introducing overloard, a multiplayer, strartegy-based, tabletop game. The best part is you can play with anyone, all over the world.",
+                "https://overloardgame.netlify.app/",
+                "https://ibb.co/9b68kF8"
+              )}
+            />
           </div>
           </div>
           <div className="hover-block">
