@@ -152,11 +152,11 @@ function App() {
               )}
             />
             <ProjectTile
-              title="Overloard"
+              title="Overlord"
               imageSrc="https://i.ibb.co/7nPYdwY/overloard-pfp.jpg"
-              imageAlt="Overloard"
+              imageAlt="Overlord"
               onClick={() => viewModal(
-                "Why make another chess clone when you can do something even cooler: make your own game. That is exactly what I did. Introducing Overloard, a strategy-based tabletop game. The best part is you can play with anyone, all over the world.",
+                "Why make another chess clone when you can do something even cooler: make your own game. That is exactly what I did. Introducing Overlord, a strategy-based tabletop game. The best part is you can play with anyone, all over the world.",
                 "https://overloardgame.netlify.app/",
                 "https://i.ibb.co/7nPYdwY/overloard-pfp.jpg"
               )}
