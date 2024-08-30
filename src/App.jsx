@@ -152,7 +152,7 @@ function App() {
               )}
             />
             <ProjectTile
-              title="Overlord"
+              title="Online Game: Overlord"
               imageSrc="https://i.ibb.co/7nPYdwY/overloard-pfp.jpg"
               imageAlt="Overlord"
               onClick={() => viewModal(
