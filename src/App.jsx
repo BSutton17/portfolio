@@ -127,9 +127,6 @@ function App() {
           <h2>Here are some of my projects</h2>
           <div className="hover-block">
             <h3 className="language">JavaScript Projects</h3>
-            {/* <span className="hover-text">
-              Below are the projects I have coded in JavaScript. These projects were developed using Vite, React, TypeScript, and, of course, JavaScript. They have been deployed using Netlify and GitHub so clicking on them should redirect you to their respective website.
-            </span> */}
           </div>
           <div className="project-container">
               {tiles && <div key={selectedValue}>{tiles}</div>}
