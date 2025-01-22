@@ -1,4 +1,3 @@
-/* Variable definitions */
 :root {
   --Dark-Blue: #130D33;
   --Purple: #231955;
@@ -7,7 +6,6 @@
   --Tan: #FFE5B4;
 }
 
-/* Global styles */
 body {
   margin-top: 70px; 
   font-family: sans-serif;
@@ -17,8 +15,6 @@ body {
   color: var(--Yellow);
   /* overflow-x: hidden; */
 }
-
-/* Ensure box-sizing includes borders */
 * {
   box-sizing: border-box;
 }
@@ -29,7 +25,7 @@ header {
   height: 10vh;
   background-color: var(--Dark-Blue);
   display: flex;
-  justify-content: flex-end; /* Adjusted from 'end' for better readability */
+  justify-content: flex-end; 
   align-items: center;
   position: fixed;
   top: 0;
@@ -58,6 +54,7 @@ li:hover {
   background-color: var(--Yellow);
   color: var(--Dark-Blue);
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 li > a {
@@ -65,12 +62,48 @@ li > a {
   text-decoration: none;
 }
 
-/* Link styles */
 a:link {
   color: var(--Yellow);
 }
 
-/* Modal styles */
+/* Dropdown container styles */
+.dropdown-container {
+  display: flex;
+  align-items: center;
+  
+}
+
+.dropdown {
+  position: fixed;
+  left: 0;
+  margin-left: 1vw;
+  background-color: var(--Dark-Blue);
+  color: var(--Yellow);
+  font-family: sans-serif;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown:hover {
+  background-color: var(--Yellow);
+  color: var(--Dark-Blue);
+}
+
+option {
+  background-color: var(--Dark-Blue);
+  color: var(--Yellow);
+  padding: 10px;
+}
+
+option:hover {
+  background-color: var(--Purple);
+}
+
+/* Modal */
 .modal {
   position: fixed;
   top: 0;
@@ -134,7 +167,8 @@ a:link {
 .welcome-section {
   text-align: center;
   width: 100%;
-  height: 75vh;
+  min-height: 75vh;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -159,6 +193,11 @@ h1 {
   position: relative;
   font-size: 64%; 
   color: var(--Tan);
+}
+
+
+h1.animated {
+  animation: rise 0.5s ease-in-out forwards; /* Add forwards to persist the final state */
 }
 
 h2 {
@@ -231,8 +270,6 @@ img {
   text-align: center;
   display: inline-block ;
   margin: 16px;
-  
- 
 }
 
 .project-tile:hover {
@@ -265,9 +302,131 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20%;
+  width: 30%;
 }
-
+#email{
+  width: 50%;
+}
 #Contact {
   padding-top: 10px;
+}
+
+/* About section */
+.desc {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  height: 40vh;
+  min-width: 50vw;
+  width: 60vw;
+  color: black;
+  border-radius: 20px;
+  padding: 10px; 
+  margin-top: 2vh;
+  min-height: fit-content;
+  transform-origin: top; 
+  animation: grow 0.5s ease-in-out; 
+  animation-delay: 0s;
+}
+
+.desc-txt{
+  border-left: 1px solid black;
+  margin-left: -21%;
+  padding-left: 3vw;
+  width: 55%;
+  min-height: fit-content;
+  height: 30vh;
+  position: relative;
+  left: 30%;
+  font-size: 80%;
+}
+
+#intro-txt{
+  font-size: 120%;
+}
+
+.none{
+  height: 0vh;
+  transform-origin: bottom; 
+  display: none;
+}
+
+.desc-pic, .desc-cs-pic{
+  border: 1px solid black;
+  height: 17vw;
+  width: 17vw;
+  border-radius: 50%;
+  margin-left: 6%;
+  background-size: 100%; 
+  background-repeat: no-repeat; 
+  background-position: center;
+}
+
+.desc-pic{
+  background-image:url("https://i.ibb.co/YhvH0Cx/Head-Shot-2.jpg");
+}
+
+.desc-cs-pic{
+  background-image:url("https://i.ibb.co/42z3hYJ/D2-C29-DD0-1641-42-A8-AA56-9-FFD5-F2-B66-FE.jpg");
+  background-size: 125%; 
+}
+@keyframes grow {
+  from {
+      transform: scaleY(0);
+  }
+  to {
+      transform: scaleY(1);
+  }
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(0);
+  }
+  to {
+      transform: translateY(-10vh);
+  }
+}
+
+@media (max-width: 450px){
+  .desc {
+    display: flex;
+    align-items: center;
+    height: 20vh;
+    width: 90vw;
+    border-radius: 10px;
+    padding: 2px; 
+    margin-top: 0.5vh;
+    min-height: fit-content;
+  }
+  
+  .desc-txt{
+    border-left: 1px solid black;
+    margin-left: -20%;
+    padding: 3vw;
+    width: 65%;
+    min-height: fit-content;
+    height: 30vh;
+    position: relative;
+    left: 25%;
+    font-size: 60%;
+  }
+  
+  #intro-txt{
+    font-size: 80%;
+  }
+
+  .dropdown{
+    width: 20vw;
+  }
+
+  .project-tile,
+.title,
+img {
+  max-width: 175px;
+  min-width: 100px;
+  font-size: small;
+}
+
+
 }

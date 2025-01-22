@@ -1,7 +1,7 @@
 // ProjectTile.js
 
 import React from 'react';
-import './App.css';
+import '../App.css';
 
 const ProjectTile = ({ title, imageSrc, imageAlt, link, onClick }) => {
   return (

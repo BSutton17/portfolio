@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
-import ProjectTile from './ProjectTile';
-import Modal from './Modal';
+import React, { useEffect, useState } from 'react';
+import ProjectTile from './Components/ProjectTile';
+import Modal from './Components/Modal';
 import './App.css';
+import Dropdown from './Components/DropDown';
+import Alphabetical from './Filter/Alphabetical';
+import Complex from './Filter/Complex';
+import New from './Filter/New'
+import Old from './Filter/Old';
+import { useAppContext }  from './Components/Context'
 
 function App() {
   const [modal, setModal] = useState(false);
@@ -11,18 +17,29 @@ function App() {
     img: '',
   });
 
+  const [showDescName, setShowDescName] = useState(false);
+  const [showDescCS, setShowDescCS] = useState(false);
+  const { selectedValue, tiles, setTiles } = useAppContext();
+
   const toggleModal = () => {
     setModal(!modal);
   };
 
-  if(modal) {
-    document.body.classList.add('active-modal')
+  useEffect(() => {
+    console.log("Selected Value:", selectedValue); // Log the selected value
+    const selectedTiles = dropdownSelected(selectedValue);
+    console.log("Selected Tiles Component:", selectedTiles); // Log the selected component or tiles
+  }, [tiles, selectedValue]);
+  
+
+  if (modal) {
+    document.body.classList.add('active-modal');
   } else {
-    document.body.classList.remove('active-modal')
+    document.body.classList.remove('active-modal');
   }
 
   const viewModal = (message, link, img) => {
-    toggleModal()
+    toggleModal();
     setModalContent({ message, link, img });
     setModal(true);
   };
@@ -31,39 +48,81 @@ function App() {
     setModal(false);
   };
 
+  const dropdownSelected = (choice) => {
+      switch (choice) {
+        case "1":
+         setTiles(<Alphabetical />);
+          break;
+        case "2":
+         setTiles(<New />);
+          break;
+        case "3":
+         setTiles(<Old />);
+          break;
+        case "4":
+         setTiles(<Complex />);
+          break;
+      }
+    };
+
   return (
     <div className="App">
       <header id="welcome-section">
+        {/* Dropdown */}
+        <Dropdown />
         <nav id="navbar">
           <ul> 
             <a href="#about">
-              <li>
-              About
-              </li>
+              <li>About</li>
             </a>
             <a href="#projects">
-              <li>
-              Projects
-              </li>
+              <li>Projects</li>
             </a>
             <a href="#spacing">
-              <li>
-                Contact Me
-              </li>
+              <li>Contact Me</li>
             </a>
           </ul>
         </nav>
       </header>
       <main>
-        <section id="about">
+        <section
+          onClick={() => {
+            if (showDescName) {
+              setShowDescName(!showDescName);
+            }
+            if (showDescCS) {
+              setShowDescCS(!showDescCS);
+            }
+          }}
+          id="about"
+        >
           <div className="welcome-section">
-            <h1>Hello, my name is Bryson</h1>
+            <h1 onClick={()=>setShowDescName(!showDescName)} onMouseEnter={() => setShowDescName(true)}>Hello, my name is Bryson</h1>
+            <div onMouseLeave={() => setShowDescName(false)} className={showDescName ? 'desc' : 'none'}>
+              <div className='desc-pic'></div>
+              <div className={'desc-txt'} id='intro-txt'>
+                Hi, I'm Bryson Sutton. I am a sophomore Computer Science Major currently attending Oklahoma State University. I love all things Computer Science, Software Engineering, and Technology, and I want to be one of the top contributors as we build the next generation of software. Javascript and Java are my top languages, and I know this is only the beginning of my journey to being the best programmer I can be. 
+              </div>
+            </div>
             <p className="caption">
-              <i>and I am a software engineer</i>
+              <i onClick={()=>setShowDescCS(!showDescCS)} onMouseEnter={() => setShowDescCS(true)}>and I am a software engineer</i>
+              <div onMouseLeave={() => setShowDescCS(false)} className={showDescCS ? 'desc' : 'none'}>
+                <div className='desc-cs-pic'></div>
+                <div className='desc-txt'>
+                  I have been coding for over three years. I have developed over twenty personal projects; below are a few of my personal favorites. In addition, I helped develop an internal front-end application for Liberty Mutual Insurance as part of their 2024 Tech Support Internship program. I am happy to say I will be returning to Liberty Mutual in 2025 as part of their TechStart Internship program. Thank you for taking the time to visit my portfolio page! I can't wait to get out there.
+                </div>
+              </div>
             </p>
           </div>
         </section>
-        <section id="projects">
+        <section onClick={() => {
+            if (showDescName) {
+              setShowDescName(!showDescName);
+            }
+            if (showDescCS) {
+              setShowDescCS(!showDescCS);
+            }
+          }}id="projects">
           <h2>Here are some of my projects</h2>
           <div className="hover-block">
             <h3 className="language">JavaScript Projects</h3>
@@ -72,104 +131,23 @@ function App() {
             </span>
           </div>
           <div className="project-container">
-            <div className='testing'>
-            {modal && (
-              <Modal
-                message={modalContent.message}
-                link={modalContent.link}
-                img={modalContent.img}
-                onClose={closeModal}
-              />
-            )}
-            <ProjectTile
-              title="Example Product Promotion Page"
-              imageSrc="https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/6622e76ceb040a0008ca7f58/screenshot_2024-04-19-21-52-13-0000.webp&fit=cover&h=500&w=800"
-              imageAlt="Example Product Promotion Page"
-              onClick={() => viewModal(
-                "We all gotta start somewhere.",
-                "https://brysons-eppp.netlify.app/",
-                "https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/6622e76ceb040a0008ca7f58/screenshot_2024-04-19-21-52-13-0000.webp&fit=cover&h=500&w=800"
-              )}
-            />
-            <ProjectTile
-              title="Markdown Previewer"
-              imageSrc="https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/64d037b6b773de0008898238/screenshot_2023-08-07-00-16-59-0000.png&fit=cover&h=500&w=800"
-              imageAlt="Markdown Previewer"
-              onClick={() => viewModal(
-                "Apart of the Free Code Camp curriculum. It's a coding language inside of a coding language!",
-                "https://brysons-markdown-previewer.netlify.app/",
-                "https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/64d037b6b773de0008898238/screenshot_2023-08-07-00-16-59-0000.png&fit=cover&h=500&w=800"
-              )}
-            />
-            <ProjectTile
-              title="Fun Fact Generator"
-              imageSrc="https://i.ibb.co/QjKF4J2/Fun-Fact-Gen-jpg.png"
-              imageAlt="Fun Fact Generator"
-              onClick={() => viewModal(
-                "One of my favorite projects to date. Simple, fun to create and fun to use. This was my first exposure to dealing with objects in react, and the project turned out well!",
-                "https://bryson-fun-facts.netlify.app/",
-                "https://i.ibb.co/QjKF4J2/Fun-Fact-Gen-jpg.png"
-              )}
-            />
-            <ProjectTile
-              title="Measurement Converter"
-              imageSrc="https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/65272af720ab8c00083a63cf/screenshot_2023-10-11-23-08-55-0000.png&fit=cover&h=500&w=800"
-              imageAlt="Measurement Converter"
-              onClick={() => viewModal(
-                "The first project I made with no outside resources or help. Simple, but fun to use and a monumentous goal checked off.",
-                "https://brysons-measurement-converter.netlify.app/",
-                "https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/65272af720ab8c00083a63cf/screenshot_2023-10-11-23-08-55-0000.png&fit=cover&h=500&w=800"
-              )}
-            />
-            <ProjectTile
-              title="Drum Machine"
-              imageSrc="https://i.ibb.co/K5fwG87/Drum-Machine.png"
-              imageAlt="Drum Machine"
-              onClick={() => viewModal(
-                "Dealing with mp3 files was challenging and fun to work with. For some reason I spent the most time working on the volume of all things. See what kind of beats you can make! ",
-                "https://brysons-drum-machine.netlify.app/",
-                "https://i.ibb.co/K5fwG87/Drum-Machine.png"
-              )}
-            />
-            <ProjectTile
-              title="Calculator"
-              imageSrc="https://d33wubrfki0l68.cloudfront.net/64d464db0ca29b000892c827/screenshot_2023-08-10-04-18-53-0000.png"
-              imageAlt="Calculator"
-              onClick={() => viewModal(
-                "A project every good programmer should have under their belt. This was one of the more time consuming and difficult personal projects I ever coded in React. After this project, I really began to feel like a software engineer.",
-                "https://brysons-calculator.netlify.app/",
-                "https://d33wubrfki0l68.cloudfront.net/64d464db0ca29b000892c827/screenshot_2023-08-10-04-18-53-0000.png"
-              )}
-            />
-            <ProjectTile
-              title="Tic-Tac-Toe"
-              imageSrc="https://i.ibb.co/v4Bcdt5/tic-tac-toe.png"
-              imageAlt="Tic-Tac-Toe"
-              onClick={() => viewModal(
-                "The first game I ever created as a software engineer using the terminal has finally come to life in a user friendly setting. Play against a rather forgiving AI, or challenge your friends!",
-                "https://brysons-tic-tac-toe.netlify.app/",
-                "https://i.ibb.co/v4Bcdt5/tic-tac-toe.png"
-              )}
-            />
-            <ProjectTile
-              title="Online Game: Overlord"
-              imageSrc="https://i.ibb.co/7nPYdwY/overloard-pfp.jpg"
-              imageAlt="Overlord"
-              onClick={() => viewModal(
-                "Why make another chess clone when you can do something even cooler: make your own game. That is exactly what I did. Introducing Overlord, a strategy-based tabletop game. The best part is you can play with anyone, all over the world.",
-                "https://overlordgame.netlify.app/",
-                "https://i.ibb.co/7nPYdwY/overloard-pfp.jpg"
-              )}
-            />
-          </div>
+              {tiles && <div key={selectedValue}>{tiles}</div>}
           </div>
           <div className="hover-block">
             <h3 className="language">Java Projects</h3>
             <span className="hover-text">
-              Below are the projects I have coded in Java. Because these projects are applications, they will require you to have Java downloaded onto your computer. You can download Java <a href="https://www.java.com/en/" target="_blank" rel="noopener noreferrer">here</a>. In addition, they use a mixture of JFrames and JPanels and, as a result, you need will to download the projects themselves onto your computer. Click the project you wish to view, and the download will begin momentarily.
+              Below are the projects I have coded in Java. Because these projects are applications, they will require you to have Java downloaded onto your computer. You can download Java <a href="https://www.java.com/en/" target="_blank" rel="noopener noreferrer">here</a>. In addition, they use a mixture of JFrames and JPanels and, as a result, you will need to download the projects themselves onto your computer. Click the project you wish to view, and the download will begin momentarily.
             </span>
           </div>
           <div className="project-container">
+          {modal && (
+                <Modal
+                  message={modalContent.message}
+                  link={modalContent.link}
+                  img={modalContent.img}
+                  onClose={closeModal}
+                />
+              )}
             <ProjectTile
               title="MineSweeper"
               imageSrc="https://i.ibb.co/JsqCZ0Z/Mine.png"
@@ -181,7 +159,7 @@ function App() {
               )}
             />
           </div>
-        </section> 
+        </section>
       </main>
       <footer>
         <div id="spacing">
