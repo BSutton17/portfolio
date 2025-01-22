@@ -2,6 +2,7 @@
 
 import React from 'react';
 import '../App.css';
+import { MdPhonelinkErase } from "react-icons/md";
 
 const ProjectTile = ({ title, imageSrc, imageAlt, link, onClick }) => {
   return (

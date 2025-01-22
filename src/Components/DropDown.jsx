@@ -16,7 +16,7 @@ function Dropdown() {
         <option value="1">Alphabetical</option>
         <option value="2">Newest</option>
         <option value="3">Oldest</option>
-        <option value="4">Complex</option>
+        <option value="4">Complexity</option>
       </select>
     </div>
   );

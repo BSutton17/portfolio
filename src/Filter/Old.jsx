@@ -3,12 +3,14 @@ import ProjectTile from '../Components/ProjectTile'
 import '../App.css';
 import Modal from '../Components/Modal';
 import { useAppContext } from '../Components/Context';
+import { MdPhonelinkErase } from "react-icons/md";
 function Old() {
   const { modal, setModal} = useAppContext();
       const [modalContent, setModalContent] = useState({
         message: '',
         link: '',
         img: '',
+        phone: false
       });
     
       const toggleModal = () => {
@@ -21,26 +23,28 @@ function Old() {
         document.body.classList.remove('active-modal');
       }
     
-      const viewModal = (message, link, img) => {
+      const viewModal = (message, link, img, phone) => {
         toggleModal();
-        setModalContent({ message, link, img });
+        setModalContent({ message, link, img, phone });
         setModal(true);
       };
-      
+    
       const closeModal = () => {
         setModal(false);
       };
-  return (
-    <>
-    <div className='testing'>
-              {modal && (
-                <Modal
-                  message={modalContent.message}
-                  link={modalContent.link}
-                  img={modalContent.img}
-                  onClose={closeModal}
-                />
-              )}
+  
+return (
+  <>
+  <div className='testing'>
+            {modal && (
+              <Modal
+                message={modalContent.message}
+                link={modalContent.link}
+                img={modalContent.img}
+                onClose={closeModal}
+                phone={modalContent.phone}
+              />
+            )}
          <ProjectTile
               title="Example Product Promotion Page"
               imageSrc="https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/6622e76ceb040a0008ca7f58/screenshot_2024-04-19-21-52-13-0000.webp&fit=cover&h=500&w=800"
@@ -48,7 +52,8 @@ function Old() {
               onClick={() => viewModal(
                 "We all gotta start somewhere.",
                 "https://brysons-eppp.netlify.app/",
-                "https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/6622e76ceb040a0008ca7f58/screenshot_2024-04-19-21-52-13-0000.webp&fit=cover&h=500&w=800"
+                "https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/6622e76ceb040a0008ca7f58/screenshot_2024-04-19-21-52-13-0000.webp&fit=cover&h=500&w=800",
+                true
               )}
             />
             <ProjectTile
@@ -118,7 +123,8 @@ function Old() {
               onClick={() => viewModal(
                 "Why make another chess clone when you can do something even cooler: make your own game. That is exactly what I did. Introducing Overlord, a strategy-based tabletop game. The best part is you can play with anyone, all over the world.",
                 "https://overlordgame.netlify.app/",
-                "https://i.ibb.co/7nPYdwY/overloard-pfp.jpg"
+                "https://i.ibb.co/7nPYdwY/overloard-pfp.jpg",
+                true
               )}
             />
             </div>

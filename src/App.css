@@ -13,6 +13,7 @@ body {
   width: 100%;
   background-color: var(--Blue);
   color: var(--Yellow);
+  text-align: center;
   /* overflow-x: hidden; */
 }
 * {
@@ -195,9 +196,8 @@ h1 {
   color: var(--Tan);
 }
 
-
-h1.animated {
-  animation: rise 0.5s ease-in-out forwards; /* Add forwards to persist the final state */
+h1:hover, p:hover{
+  cursor: pointer;
 }
 
 h2 {
@@ -221,20 +221,31 @@ h3 {
 .language {
   font-size: 25px;
   text-align: center;
-  text-decoration: underline;
   color: var(--Dark-Blue);
 }
-
 /* Hover block styles */
 .hover-text {
-  display: none;
+  display: none; 
+  color: var(--Tan);
+  text-align: center;
+  border: 1px solid;
+  width: 80vw;
+  position: relative; 
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%); 
+  z-index: 10;
+  padding: 1vw; 
+}
+
+.hover-block {
+  position: relative; 
 }
 
 .hover-block:hover .hover-text {
-  color: var(--Tan);
-  text-align: center;
-  display: block;
+  display: block; 
 }
+
 
 .hover-block a {
   color: var(--Yellow);
@@ -277,9 +288,10 @@ img {
 }
 
 .title {
-  padding-top: 20px;
   color: var(--Yellow);
+  padding-top: 20px;
 }
+
 
 /* Footer styles */
 footer {
@@ -388,45 +400,69 @@ footer {
   }
 }
 
-@media (max-width: 450px){
-  .desc {
-    display: flex;
-    align-items: center;
-    height: 20vh;
-    width: 90vw;
-    border-radius: 10px;
-    padding: 2px; 
-    margin-top: 0.5vh;
-    min-height: fit-content;
+@media (max-width: 450px) {
+  body{
+    background-color: var(--Dark-Blue)
   }
-  
-  .desc-txt{
-    border-left: 1px solid black;
-    margin-left: -20%;
-    padding: 3vw;
-    width: 65%;
-    min-height: fit-content;
-    height: 30vh;
-    position: relative;
-    left: 25%;
-    font-size: 60%;
+  #projects{
+    position: relative;;
+    bottom: 5vh;
+    height: 185vh;
+    padding: 5px;
+    background-color: var(--Blue);
   }
-  
-  #intro-txt{
-    font-size: 80%;
+  .welcome-section {
+    min-height: 85vh;
   }
+  li {
+    padding: 0.5rem;
+  }
+    .desc {
+      height: 40vh;
+      min-width: 85vw;
+    }
+    
+    .desc-txt{
+      left: 25%;
+      font-size: 45% !important;
+    }
+    
+    #intro-txt{
+      font-size: 70% !important;
+    }
+    
+    .none{
+      height: 0vh;
+      transform-origin: bottom; 
+      display: none;
+    }
+    
+    .desc-pic, .desc-cs-pic{
+      border: 1px solid black;
+      height: 30vw !important;
+      width: 30vw !important;
+    }
 
   .dropdown{
     width: 20vw;
   }
 
+  #intro-txt {
+    font-size: 1rem; 
+  }
+
+  .desc-pic,
+  .desc-cs-pic {
+    height: 25vw;
+    width: 25vw;
+    margin: 10px 0;
+  }
+
   .project-tile,
-.title,
-img {
-  max-width: 175px;
-  min-width: 100px;
-  font-size: small;
-}
-
-
+  .title,
+  img {
+    max-width: 40vw;
+    min-width: 35vw;
+    font-size: 2.2vh;
+  }
 }

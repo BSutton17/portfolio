@@ -97,7 +97,7 @@ function App() {
           id="about"
         >
           <div className="welcome-section">
-            <h1 onClick={()=>setShowDescName(!showDescName)} onMouseEnter={() => setShowDescName(true)}>Hello, my name is Bryson</h1>
+            <h1 onClick={()=>setShowDescName(!showDescName)}>Hello, my name is Bryson</h1>
             <div onMouseLeave={() => setShowDescName(false)} className={showDescName ? 'desc' : 'none'}>
               <div className='desc-pic'></div>
               <div className={'desc-txt'} id='intro-txt'>
@@ -105,11 +105,11 @@ function App() {
               </div>
             </div>
             <p className="caption">
-              <i onClick={()=>setShowDescCS(!showDescCS)} onMouseEnter={() => setShowDescCS(true)}>and I am a software engineer</i>
+              <i onClick={()=>setShowDescCS(!showDescCS)} >and I am a software engineer</i>
               <div onMouseLeave={() => setShowDescCS(false)} className={showDescCS ? 'desc' : 'none'}>
                 <div className='desc-cs-pic'></div>
                 <div className='desc-txt'>
-                  I have been coding for over three years. I have developed over twenty personal projects; below are a few of my personal favorites. In addition, I helped develop an internal front-end application for Liberty Mutual Insurance as part of their 2024 Tech Support Internship program. I am happy to say I will be returning to Liberty Mutual in 2025 as part of their TechStart Internship program. Thank you for taking the time to visit my portfolio page! I can't wait to get out there.
+                  I have been coding for over three years. So far, I have developed over twenty personal projects; below are a few of my personal favorites. In addition, I helped develop an internal front-end application for Liberty Mutual Insurance as part of their 2024 Tech Support Internship program. I am happy to say I will be returning to Liberty Mutual in 2025 as part of their TechStart Internship program. Thank you for taking the time to visit my portfolio page! I can't wait to get out there.
                 </div>
               </div>
             </p>
@@ -126,15 +126,15 @@ function App() {
           <h2>Here are some of my projects</h2>
           <div className="hover-block">
             <h3 className="language">JavaScript Projects</h3>
-            <span className="hover-text">
+            {/* <span className="hover-text">
               Below are the projects I have coded in JavaScript. These projects were developed using Vite, React, TypeScript, and, of course, JavaScript. They have been deployed using Netlify and GitHub so clicking on them should redirect you to their respective website.
-            </span>
+            </span> */}
           </div>
           <div className="project-container">
               {tiles && <div key={selectedValue}>{tiles}</div>}
           </div>
           <div className="hover-block">
-            <h3 className="language">Java Projects</h3>
+            <h3 className="language"><u>Java Projects</u></h3>
             <span className="hover-text">
               Below are the projects I have coded in Java. Because these projects are applications, they will require you to have Java downloaded onto your computer. You can download Java <a href="https://www.java.com/en/" target="_blank" rel="noopener noreferrer">here</a>. In addition, they use a mixture of JFrames and JPanels and, as a result, you will need to download the projects themselves onto your computer. Click the project you wish to view, and the download will begin momentarily.
             </span>
