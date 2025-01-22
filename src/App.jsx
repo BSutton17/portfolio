@@ -17,6 +17,7 @@ function App() {
     img: '',
   });
 
+  const [view, setView] = useState(false)
   const [showDescName, setShowDescName] = useState(false);
   const [showDescCS, setShowDescCS] = useState(false);
   const { selectedValue, tiles, setTiles } = useAppContext();

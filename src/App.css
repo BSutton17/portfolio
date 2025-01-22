@@ -222,6 +222,7 @@ h3 {
   font-size: 25px;
   text-align: center;
   color: var(--Dark-Blue);
+  text-decoration: underline;
 }
 /* Hover block styles */
 .hover-text {
@@ -407,7 +408,6 @@ footer {
   #projects{
     position: relative;;
     bottom: 5vh;
-    height: 185vh;
     padding: 5px;
     background-color: var(--Blue);
   }
@@ -458,11 +458,4 @@ footer {
     margin: 10px 0;
   }
 
-  .project-tile,
-  .title,
-  img {
-    max-width: 40vw;
-    min-width: 35vw;
-    font-size: 2.2vh;
-  }
 }
