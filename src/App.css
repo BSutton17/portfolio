@@ -198,6 +198,7 @@ h1 {
 
 h1:hover, p:hover{
   cursor: pointer;
+  text-decoration: underline;
 }
 
 h2 {
