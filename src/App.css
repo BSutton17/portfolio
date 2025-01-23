@@ -196,7 +196,7 @@ h1 {
   color: var(--Tan);
 }
 
-h1:hover, p:hover{
+h1:hover, p > i:hover{
   cursor: pointer;
   text-decoration: underline;
 }
