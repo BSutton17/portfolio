@@ -110,7 +110,7 @@ function App() {
               <div onMouseLeave={() => setShowDescCS(false)} className={showDescCS ? 'desc' : 'none'}>
                 <div className='desc-cs-pic'></div>
                 <div className='desc-txt'>
-                  I have been coding for over three years. So far, I have developed over twenty personal projects; below are a few of my personal favorites. In addition, I helped develop an internal front-end application for Liberty Mutual Insurance as part of their 2024 Tech Support Internship program. I am happy to say I will be returning to Liberty Mutual in 2025 as part of their TechStart Internship program. Thank you for taking the time to visit my portfolio page! I can't wait to get out there.
+                  I have been coding for four years. So far, I have developed over twenty personal projects; below are a few of my personal favorites. In addition, I helped develop an internal front-end application for Liberty Mutual Insurance as part of their 2024 Tech Support Internship program. I am happy to say I will be returning to Liberty Mutual in 2025 as part of their TechStart Internship program. Thank you for taking the time to visit my portfolio page! I can't wait to get out there.
                 </div>
               </div>
             </p>
