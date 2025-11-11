@@ -103,7 +103,7 @@ return (
         onClick={() => viewModal(
           "Why make another chess clone when you can do something even cooler: make your own game. That is exactly what I did. Introducing Overlord, a strategy-based tabletop game. The best part is you can play with anyone, all over the world.",
           "https://overlordgame.netlify.app/",
-          "https://i.ibb.co/7nPYdwY/overloard-pfp.jpg",
+          "https://i.ibb.co/v4kSpbbp/new-overlord.png",
           true
         )}
       />
